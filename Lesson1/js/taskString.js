@@ -1,12 +1,10 @@
 let testString = 'some test string';
 
-//Task 1
+//1 Получить первую и последнюю буквы строки
+console.log(testString.charAt(0))
+console.log(testString.charAt(testString.length - 1))
 
-// console.log(testString.charAt(0))
-// console.log(testString.charAt(testString.length - 1))
-
-//Task 2
-
+//2 Сделать первую и последнюю буквы в верхнем регистре
 function changeRegister(string) {
     let newStr = string[0].toUpperCase();
     let len = string.length;
@@ -19,23 +17,21 @@ function changeRegister(string) {
     return newStr;
 }
 
-// console.log(changeRegister(testString))
+console.log(changeRegister(testString))
 
 let len = testString.length;
 let newStr = testString.charAt(0).toUpperCase() + testString.slice(1, len - 1) + testString.charAt(len - 1).toUpperCase();
 
-// console.log(newStr);
+console.log(newStr);
 
-//Task 3
-
+//3 Найти положение слова 'string' в строке
 let position = [];
 let subStr = 'string'
 position[0] = testString.indexOf(subStr);
 position[1] = position[0] + subStr.length - 1;
 console.log(position);
 
-//Task 4
-
+//4 Найти положение второго пробела ("вручную ничего не считать")
 function getSecondSpace(string) {
     let positionSpace = null;
     let count = 0;
@@ -51,27 +47,23 @@ function getSecondSpace(string) {
     return positionSpace;
 }
 
-// console.log(getSecondSpace(testString))
+console.log(getSecondSpace(testString))
 
-//Task 5
-
+//5 получить строку с 5-го символа длиной 4 буквы
 let newSlice = testString.substr(5, 4);
-// console.log(newSlice);
+console.log(newSlice);
 
-//Task 6
-
+//6  получить строку с 5-го по 9-й символы
 let newSlice2 = testString.substring(5, 9);
-// console.log(newSlice2);
+console.log(newSlice2);
 
-//Task 7
-
+//7 Получить новую строку из исходной путем удаления последних 6-и символов (то есть исходная строка без последних 6и символов)
 let newSlice3 = testString.slice(-6);
-// console.log(newSlice3);
+console.log(newSlice3);
 
-//Task 8
-
+//8 Из двух переменных a=20 и b=16 (где 20 и 16 - числа) получить переменную string, в которой будет содержаться текст "2016"
 function strConc(a, b) {
     return a.toString() + b.toString();
 }
 
-// console.log(strConc(20, 16));
+console.log(strConc(20, 16));
