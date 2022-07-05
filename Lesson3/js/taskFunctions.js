@@ -1,6 +1,7 @@
+//1. Создать функцию multiply, которая будет принимать любое количество числе и возвращать их произведение. Если нет ни одного аргумента, вернуть ноль:
 function multiply(...args) {
     if (args.length === 0) {
-        return new Error('Nothing to multiply');
+        return console.log(0);
     }
     let res = 1;
     for (let i = 0; i < args.length; i++) {
@@ -9,9 +10,9 @@ function multiply(...args) {
     return console.log(res);
 }
 
-// multiply(1, 2, 3)
+multiply(1, 2, 3)
 
-
+// 2. Факториал числа - произведение всех натуральных чисел от 1 до n включительно: 3! = 3*2*1, 5! = 5*4*3*2*1. С помощью рекурсии вычислить факториал числа 10: factorial(10) = 3628800
 function recursiveFact(n) {
     if (n < 0) {
         return console.log(undefined);
@@ -23,15 +24,16 @@ function recursiveFact(n) {
     }
 }
 
-// console.log(recursiveFact(5));
+console.log(recursiveFact(10));
 
+// 3. Создать функцию, которая принимает строку и возвращает строку-перевертыш: reverseString('test') = 'tset'
 function reverseString(str) {
     return !str.length ? str : reverseString(str.substring(1)) + str[0];
 }
 
-// console.log(reverseString('test'));
+console.log(reverseString('test'));
 
-
+// 4. Создать функцию, которая в качестве аргумента принимает строку из букв и возвращает строку, где каждый символ разделен пробелом и заменен на юникод-значение символа:
 function getCodeStringFromText(str, handler) {
     let newStr = ''
 
@@ -46,6 +48,7 @@ getCodeStringFromText('hello', function (symbol) {
     return symbol.charCodeAt() + ' ';
 })
 
+// 5. Написать функцию-рекурсию, которая выведет каждый символ строки в консоль: printChars('test')
 function printChars(str) {
     let f;
     if (str !== '') {
@@ -59,6 +62,10 @@ function printChars(str) {
 
 printChars('test')
 
+// 6. Создать две функции и дать им осмысленные названия:
+//    - первая функция принимает массив и колбэк
+//    - вторая функция (колбэк) обрабатывает каждый элемент массива
+// Первая функция возвращает строку "New value": и обработанный массив:
 function parser(arr, callback) {
     let res = `New value:`
     for (let i = 0; i < arr.length; i++) {
