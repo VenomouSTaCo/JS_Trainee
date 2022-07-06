@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section class="task-wrap mt-5">
+    <div class="container">
+        <div class="card mb-3">
+            <div class="card-header">
+                Add ToDo
+            </div>
+            <div class="card-body">
+                <form name="addTodoItem">
+                    <div class="form-group">
+                        <label for="todoText">Text</label>
+                        <input type="text" class="form-control" id="todoText">
+                        <div class="invalid-feedback">
+                            Please, enter some text
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="card-header">
+                Task list
+            </div>
+            <div class="card-body">
+                <ul class="list-group mb-3">
+                </ul>
+            </div>
+
+        </div>
+
+
+        <button class="btn btn-primary">Clear list</button>
+    </div>
+</section>
+<script src="js/plugin.js"></script>
+</body>
+</html>
