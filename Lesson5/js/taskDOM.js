@@ -19,21 +19,26 @@ function getAllLinks() {
 getAllLinks();
 
 function getPrevUl() {
-    if (document.querySelector('ul').previousElementSibling != null) {
-        return document.querySelector('ul').previousElementSibling;
-    } else {
-        return document.querySelector('ul').parentElement;
+    let elementList = document.querySelector('ul');
+
+    if (elementList.previousElementSibling) {
+        return elementList.previousElementSibling;
     }
+
+    return elementList.parentElement;
 }
 
 console.log(getPrevUl());
 
 function getNextUl() {
-    if (document.querySelector('ul').nextElementSibling !== null) {
-        return document.querySelector('ul').nextElementSibling;
-    } else {
-        return document.querySelector('ul').parentElement;
+    let elementList = document.querySelector('ul');
+
+    if (elementList.nextElementSibling) {
+        return elementList.nextElementSibling;
     }
+
+    return elementList.parentElement;
+
 }
 
 console.log(getNextUl());
