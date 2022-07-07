@@ -7,23 +7,33 @@ console.log(isParent(document.querySelector('ul'), document.querySelector('li'))
 
 function getAllLinks() {
     let links = document.links;
+    let res = [];
     for (let i = 0; i < links.length; i++) {
         if (!(links[i].closest('ul'))) {
-            console.log(links[i]);
+            res.push(links[i]);
         }
     }
+    return res;
 }
 
 getAllLinks();
 
 function getPrevUl() {
-    return document.querySelector('ul').previousElementSibling;
+    if (document.querySelector('ul').previousElementSibling != null) {
+        return document.querySelector('ul').previousElementSibling;
+    } else {
+        return document.querySelector('ul').parentElement;
+    }
 }
 
 console.log(getPrevUl());
 
 function getNextUl() {
-    return document.querySelector('ul').nextElementSibling;
+    if (document.querySelector('ul').nextElementSibling !== null) {
+        return document.querySelector('ul').nextElementSibling;
+    } else {
+        return document.querySelector('ul').parentElement;
+    }
 }
 
 console.log(getNextUl());
