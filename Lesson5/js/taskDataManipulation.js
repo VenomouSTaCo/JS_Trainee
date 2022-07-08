@@ -10,7 +10,7 @@ function getNodeInfo(nodeElement) {
     let nodeInfo = {
         nodeType: '',
         nodeName: nodeElement.nodeName,
-        childrenCount: nodeElement.children.length
+        childrenCount: nodeElement.children.length,
     }
 
     switch (nodeElement.nodeType) {
@@ -73,10 +73,7 @@ function addIdToLinkAfterUl() {
     let arr = document.body.children;
 
     for (let i = 0; i < arr.length; i++) {
-        console.log(arr[i].tagName)
         if (arr[i].tagName === 'UL') {
-
-
             indexUl = i + 1;
             break;
         }
@@ -173,30 +170,29 @@ function makeMarkGreen() {
 // console.log(makeMarkGreen())
 
 //13. Отсортировать li внутри списка в обратном порядке (по тексту внутри)
-function sortLi(ul){
-    let newLi = [].concat(ul.children);
-
+function sortLi(ul) {
     let arr = [];
 
     for (let i = 0; i < ul.children.length; i++) {
         arr.push(ul.children[i]);
     }
 
-    console.log(arr)
     arr.sort((prev, next) => {
-        if (next.textContent > prev.textContent) {
-            return 0;
+            if (next.textContent > prev.textContent) {
+                return -1;
+            } else {
+                return 1;
+            }
         }
+    )
 
-        return 1;
-    })
-    debugger
-    // debugger
-    ul.innerHTML='';
+    ul.innerHTML = '';
+
     for (let i = 0; i < arr.length; i++) {
-        ul.append(arr[i]);
+        ul.insertAdjacentElement('afterbegin', arr[i]);
     }
+
     return ul;
 }
 
-console.log(sortLi(document.querySelector('ul')));
+// console.log(sortLi(document.querySelector('ul')));
