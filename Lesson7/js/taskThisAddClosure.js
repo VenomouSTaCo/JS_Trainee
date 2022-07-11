@@ -157,9 +157,13 @@ const element = {
     }
 };
 
-// const getElementHeight = element.getHeight();
-const getElementHeight = element.getHeight.apply(element);
-// console.log(getElementHeight);
+// const getElementHeight = element.getHeight;
+// console.log(getElementHeight)
+// const getElementHeight = element.getHeight;
+// console.log(getElementHeight.call(element));
+
+// console.log(getElementHeight.call(element));
+
 
 // 1. Создайте функцию, которая бы умела делать:
 /* minus(10)(6); //4
@@ -200,7 +204,7 @@ const multiply = multiplyMaker(2);
 b. получить строку
 c. получить длину строки
 d. получить строку-перевертыш*/
-const module = (function () {
+const module = (() => {
     let str = '';
 
     function setStr(string) {
@@ -228,7 +232,8 @@ const module = (function () {
         getLength,
         reverseStr,
     };
-})();
+});
+
 
 // module.setStr('abcde');
 // console.log(module.getStr());
