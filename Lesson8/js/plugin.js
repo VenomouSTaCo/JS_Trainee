@@ -1,10 +1,15 @@
 const buttons = document.querySelectorAll('[data-time]');
+const stop = document.querySelector('.fa-btn');
+const form = document.querySelector('#custom')
 
 const timer = (function () {
+
     let countdown,
         timerDisplay,
         endTime,
-        alarmSound;
+        alarmSound,
+        secondsLeft,
+        lastSeconds;
 
     function init(settings) {
         timerDisplay = document.querySelector(settings.timeLeftSelector);
@@ -13,6 +18,8 @@ const timer = (function () {
         if (settings.alarmSound) {
             alarmSound = new Audio(settings.alarmSound);
         }
+
+        return this;
     }
 
     function start(seconds) {
@@ -26,7 +33,7 @@ const timer = (function () {
 
         clearInterval(countdown);
 
-        if(alarmSound){
+        if (alarmSound) {
             alarmSound.pause();
             alarmSound.currentTime = 0;
         }
@@ -38,8 +45,8 @@ const timer = (function () {
         displayEndTime(then);
 
         countdown = setInterval(() => {
-            const secondsLeft = Math.round((then - Date.now()) / 1000);
-
+            secondsLeft = Math.round((then - Date.now()) / 1000);
+            lastSeconds = secondsLeft;
             if (secondsLeft < 0) {
                 clearInterval(countdown);
                 playsound();
@@ -49,12 +56,17 @@ const timer = (function () {
         }, 1000)
     }
 
+    function getSeconds() {
+        return lastSeconds;
+    }
 
     function displayTimeLeft(seconds) {
-        const minutes = Math.floor(seconds / 60);
+        const minutes = Math.floor(seconds / 60 % 60);
         const remainedSeconds = seconds % 60;
+        const hours = Math.floor(seconds / 60 / 60 % 24);
+        const days = Math.floor(seconds / 60 / 60 / 24);
 
-        const display = `${minutes}:${remainedSeconds < 10 ? '0' : ''}${remainedSeconds}`;
+        const display = `${days ? days + (days < 5 ? days % 10 === 1 ? ' день ' : ' дня ' : ' дней ') : ''}${hours ? hours + ':' : ''}${minutes < 10 ? '0' : ''}${minutes}:${remainedSeconds < 10 ? '0' : ''}${remainedSeconds}`;
         document.title = display;
         timerDisplay.textContent = display;
     }
@@ -63,8 +75,10 @@ const timer = (function () {
         const end = new Date(timestamp);
         const hour = end.getHours();
         const minutes = end.getMinutes();
+        const days = end.getDate();
+        const month = end.getMonth();
 
-        endTime.textContent = `Be back at ${hour}:${minutes < 10 ? '0' : ''}${minutes}`;
+        endTime.textContent = `Be back at ${days}.${month > 9 ? month : '0' + month} ${hour ? hour + ':' : ''}${minutes < 10 ? '0' : ''}${minutes}`;
     }
 
     function stop() {
@@ -78,7 +92,8 @@ const timer = (function () {
     return {
         init,
         start,
-        stop
+        stop,
+        getSeconds,
     }
 })();
 
@@ -88,9 +103,27 @@ timer.init({
     alarmSound: 'audio/bell.mp3'
 })
 
-function startTimer(e) {
+function startTimer() {
     const seconds = parseInt(this.dataset.time);
     timer.start(seconds);
 }
 
 buttons.forEach(btn => btn.addEventListener('click', startTimer));
+
+stop.addEventListener('click', () => {
+    if (stop.classList.contains('stop')) {
+        stop.classList.remove('stop');
+        stop.textContent = 'Restart'
+        timer.stop();
+    } else {
+        stop.classList.add('stop');
+        stop.textContent = 'Stop'
+        timer.start(timer.getSeconds())
+    }
+});
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    let inputValue = document.querySelector('input').value;
+    timer.start(inputValue * 60);
+})
