@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+          integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        .notification-alert {
+            display: none;
+        }
+
+        .notification-alert.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<section class="task-wrap mt-5">
+    <div class="container">
+        <div class="alert notification-alert"></div>
+        <div class="card mb-3">
+            <div class="card-header">
+                Add ToDo
+            </div>
+            <div class="card-body">
+                <form name="addTodoItem">
+                    <div class="form-group">
+                        <label for="todoText">Text</label>
+                        <input type="text" class="form-control" id="todoText">
+                        <div class="invalid-feedback">
+                            Please, enter some text
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add</button>
+                </form>
+            </div>
+        </div>
+        <div class="card mb-3 list-card">
+            <div class="card-header">
+                Task list
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                </ul>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-clear-list">Clear list</button>
+    </div>
+</section>
+<script src="js/ajax.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
