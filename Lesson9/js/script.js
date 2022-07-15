@@ -11,9 +11,9 @@ class VideoPlayer {
     }
 
     init() {
-        this.video.currentTime = JSON.parse(localStorage.getItem('currTime'));
-        this.video.volume = JSON.parse(localStorage.getItem('volume'));
-        this.video.playbackRate = JSON.parse(localStorage.getItem('playback'));
+        this.video.currentTime = JSON.parse(localStorage.getItem('currTime')) || 0;
+        this.video.volume = JSON.parse(localStorage.getItem('volume')) || 0;
+        this.video.playbackRate = JSON.parse(localStorage.getItem('playback')) || 0;
         this.events();
     }
 
