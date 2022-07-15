@@ -11,26 +11,20 @@ class VideoPlayer {
     }
 
     init() {
-        // localStorage.setItem('status', JSON.stringify(this.status));
+        this.video.currentTime = JSON.parse(localStorage.getItem('currTime'));
+        this.video.volume = JSON.parse(localStorage.getItem('volume'));
+        this.video.playbackRate = JSON.parse(localStorage.getItem('playback'));
         this.events();
     }
 
-    status = {
-        volume,
-        playback,
-        currentTime: this.video.currentTime,
-    }
+    // volume = 0;
+    // playback = 0;
+    // currTime = 0;
 
-    // isSaved() {
-    //     if(this.status.volume)
-    // }
 
     events() {
         this.video.addEventListener('click', e => this.togglePlay(e));
-        this.video.addEventListener('timeupdate', e => {
-            // this.status.currentTime = this.video.currentTime;
-            this.handleProgress(e)
-        });
+        this.video.addEventListener('timeupdate', e => this.handleProgress(e));
         this.toggle.addEventListener('click', e => this.togglePlay(e));
         this.ranges.forEach(range => range.addEventListener('change', e => this.handleRangeUpdate(e)));
         this.ranges.forEach(range => range.addEventListener('mousemove', e => this.handleRangeUpdate(e)));
@@ -48,8 +42,14 @@ class VideoPlayer {
     }
 
     handleRangeUpdate(e) {
+        if (e.target.name === 'playbackRate') {
+            localStorage.setItem('playback', JSON.stringify(e.target.value));
+            // this.playback = e.target.value;
+        } else {
+            localStorage.setItem('volume', JSON.stringify(e.target.value));
+            // this.volume = e.target.value;
+        }
         this.video[e.target.name] = e.target.value;
-        this.status.currentTime = this.video
     }
 
     skip(e) {
@@ -58,6 +58,7 @@ class VideoPlayer {
 
     handleProgress(e) {
         const percent = (this.video.currentTime / this.video.duration) * 100;
+        localStorage.setItem('currTime', JSON.stringify(this.video.currentTime));
         this.progressBar.style.flexBasis = `${percent}%`;
     }
 
@@ -69,5 +70,3 @@ class VideoPlayer {
 
 const video = new VideoPlayer();
 video.init();
-
-console.log(video);
