@@ -8,21 +8,32 @@ class VideoPlayer {
         this.skipButtons = this.player.querySelectorAll('[data-skip]');
         this.ranges = this.player.querySelectorAll('.player__slider');
         this.mouseDown = false;
+        this.volume = this.player.querySelector('[name="volume"]');
+        this.playbackRate = this.player.querySelector('[name="playbackRate"]');
     }
 
     init() {
-        this.video.currentTime = JSON.parse(localStorage.getItem('currTime')) || 0;
-        this.video.volume = JSON.parse(localStorage.getItem('volume')) || 0;
-        this.video.playbackRate = JSON.parse(localStorage.getItem('playback')) || 0;
         this.events();
+        const {volume, playbackRate, currentTime} = JSON.parse(localStorage.getItem('status'));
+        this.status.volume = volume || 0;
+        this.status.playbackRate = playbackRate || 0;
+        this.status.currentTime = currentTime || 0;
+
+        this.video['volume'] = volume;
+        this.volume.value = volume;
+        this.video['playbackRate'] = playbackRate;
+        this.playbackRate.value = playbackRate;
+        this.video.currentTime = currentTime;
     }
 
-    // volume = 0;
-    // playback = 0;
-    // currTime = 0;
-
+    status = {
+        volume: 0,
+        playbackRate: 0,
+        currentTime: 0,
+    }
 
     events() {
+        // all events
         this.video.addEventListener('click', e => this.togglePlay(e));
         this.video.addEventListener('timeupdate', e => this.handleProgress(e));
         this.toggle.addEventListener('click', e => this.togglePlay(e));
@@ -30,43 +41,41 @@ class VideoPlayer {
         this.ranges.forEach(range => range.addEventListener('mousemove', e => this.handleRangeUpdate(e)));
         this.skipButtons.forEach(btn => btn.addEventListener('click', e => this.skip(e)));
         this.progress.addEventListener('click', e => this.scrub(e));
+
         this.progress.addEventListener('mousemove', e => this.mouseDown && this.scrub(e));
-        this.progress.addEventListener('mousedown', e => this.mouseDown = true);
-        this.progress.addEventListener('mouseup', e => this.mouseDown = false);
+        this.progress.addEventListener('mousedown', () => this.mouseDown = true);
+        this.progress.addEventListener('mouseup', () => this.mouseDown = false);
     }
 
     togglePlay() {
         const method = this.video.paused ? 'play' : 'pause';
         this.toggle.textContent = this.video.paused ? '❚❚' : '▶';
         this.video[method]();
-    }
 
-    handleRangeUpdate(e) {
-        if (e.target.name === 'playbackRate') {
-            localStorage.setItem('playback', JSON.stringify(e.target.value));
-            // this.playback = e.target.value;
-        } else {
-            localStorage.setItem('volume', JSON.stringify(e.target.value));
-            // this.volume = e.target.value;
-        }
-        this.video[e.target.name] = e.target.value;
-    }
-
-    skip(e) {
-        this.video.currentTime += parseFloat(e.target.dataset.skip)
     }
 
     handleProgress(e) {
         const percent = (this.video.currentTime / this.video.duration) * 100;
-        localStorage.setItem('currTime', JSON.stringify(this.video.currentTime));
-        this.progressBar.style.flexBasis = `${percent}%`;
+        this.status.currentTime = this.video.currentTime;
+        localStorage.setItem('status', JSON.stringify(this.status));
+        this.progressBar.style.flexBasis = percent + '%';
+    }
+
+    skip(e) {
+        // time skip
+        this.video.currentTime += parseFloat(e.target.dataset.skip);
     }
 
     scrub(e) {
         this.video.currentTime = (e.offsetX / this.progress.offsetWidth) * this.video.duration;
     }
-}
 
+    handleRangeUpdate(e) {
+        this.status[e.target.name] = e.target.value;
+        localStorage.setItem('status', JSON.stringify(this.status));
+        this.video[e.target.name] = e.target.value;
+    }
+}
 
 const video = new VideoPlayer();
 video.init();
