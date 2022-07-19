@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+<header class="header">
+    <div class="container header__wrap">
+        <img src="images/logo.png" alt="Логотип Портфолио" class="header header__logo-img">
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a href="#yak1" class="header__link">Домой</a>
+                </li>
+                <li class="header__item">
+                    <a href="#yak2" class="header__link">Обо мне</a>
+                </li>
+                <li class="header__item">
+                    <a href="#yak3" class="header__link">Навыки</a>
+                </li>
+                <li class="header__item">
+                    <a href="#yak4" class="header__link">Портфолио</a>
+                </li>
+                <li class="header__item">
+                    <a href="#yak5" class="header__link">Контакты</a>
+                </li>
+            </ul>
+        </nav>
+        <button class="header__hamburger hamburger">Открыть меню</button>
+    </div>
+</header>
+
+<section class="primary" id="yak1">
+    <div class="container">
+        <div class="primary__info">
+            <h1 class="primary__title">Lorem ipsum.</h1>
+            <p class="primary__text">Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="primary__image-user">
+            <picture>
+                <source media="(max-width: 768px)" srcset="images/small.png">
+                <img src="images/photo-desk%201.jpg" alt="Фото Lorem ipsum">
+            </picture>
+        </div>
+    </div>
+</section>
+
+<section class="about" id="yak2">
+    <div class="container">
+        <h2 class="about__title title">Обо мне</h2>
+        <div class="about__info">
+            <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, impedit!</p>
+            <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem explicabo
+                laudantium nesciunt placeat quia. Dolores.</p>
+            <p class="about__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut blanditiis consequatur
+                itaque optio!</p>
+        </div>
+    </div>
+</section>
+
+<section class="skills" id="yak3">
+    <div class="container">
+        <h2 class="skills__title title">Навыки</h2>
+        <div class="skills__info">
+            <p class="skills__text">Используемые технологии:</p>
+            <ul class="skills__list">
+                <li class="skills__item">
+                    <img src="images/html-logo.png" alt="Лого HTML" class="skills__logo">
+                    <p class="skills__name">HTML</p>
+                    <p class="stars"><span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span></p>
+                </li>
+                <li class="skills__item">
+                    <img src="images/css-logo.png" alt="Лого CSS" class="skills__logo">
+                    <p class="skills__name">CSS</p>
+                    <p class="stars"><span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span></p>
+                </li>
+                <li class="skills__item">
+                    <img src="images/javascript-logo.png" alt="Лого JavaScript" class="skills__logo">
+                    <p class="skills__name">JavaScript</p>
+                    <p class="stars"><span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span></p>
+                </li>
+                <li class="skills__item">
+                    <img src="images/react-logo.png" alt="Лого React" class="skills__logo">
+                    <p class="skills__name">React</p>
+                    <p class="stars"><span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span></p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio" id="yak4">
+    <div class="container">
+        <h2 class="portfolio__title title">Портфолио</h2>
+        <div class="portfolio__info">
+            <img src="images/MebelChel.jpg" alt="" class="portfolio__img">
+            <p class="portfolio__text">MebelChel - изготовление мебели на заказ</p>
+            <img src="images/shawarma-bg%201.jpg" alt="" class="portfolio__img">
+            <p class="portfolio__text">Shawarma - лучшая шаурма в городе</p>
+        </div>
+    </div>
+</section>
+
+<footer class="footer" id="yak5">
+    <div class="container">
+        <h2 class="footer__title title">Контакты</h2>
+        <div class="footer__info">
+            <p class="footer__desc">Хотите связаться со мной или узнать больше?</p>
+            <div class="footer__btn">
+                <button class="btn-primary">Написать мне</button>
+            </div>
+            <ul class="footer__list ">
+                <li class="footer__ul list__item">
+                    <a class="item__link" href="https://vk.com/"><img src="images/vk.png" alt="Ссылка на ВК"></a>
+                </li>
+                <li class="footer__ul list__item">
+                    <a class="item__link" href="https://web.telegram.org/"><img src="images/telegram.png"
+                                                                                alt="Ссылка на Телеграм"></a>
+                </li>
+                <li class="footer__ul list__item">
+                    <a class="item__link" href="#"><img src="images/instagram.png" alt="Ссылка на Инстаграм"></a>
+                </li>
+            </ul>
+            <p class="footer__text">Мои аккаунты в Vk, Telegram,<br> Instagram</p>
+        </div>
+    </div>
+</footer>
+
+<div class="modal">
+    <div class="modal__wrap">
+        <h2 class="modal__title">Форма</h2>
+        <button class="btn-close">Закрыть окно</button>
+    </div>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
