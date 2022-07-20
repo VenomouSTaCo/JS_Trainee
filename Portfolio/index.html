@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -148,8 +148,28 @@
 
 <div class="modal">
     <div class="modal__wrap">
-        <h2 class="modal__title">Форма</h2>
-        <button class="btn-close">Закрыть окно</button>
+        <form class="feedback__form">
+            <h2 class="modal__title">ОСТАВЬТЕ ЗАЯВКУ!<br>
+                Я ПОЗВОНЮ ВАМ В БЛИЙЖАШЕЕ ВРЕМЯ</h2>
+            <ul class="modal__list">
+                <li class="modal__item name__item">
+                    <label for="line1" class="input__line name__line">Имя</label>
+                    <input type="text" required class="name__value" id="line1">
+                </li>
+                <li class="modal__item phone__item">
+                    <label for="line2" class="input__line phone__line">Телефон</label>
+                    <input type="tel" pattern="\+?[0-9\s\-\(\)]+" required class="phone__value" id="line2">
+                </li>
+            </ul>
+            <div class="send">
+                <p class="send__text">*Нажимая кнопку, я даю свое<br> согласие на обработку<br>
+                    персональных
+                    данных
+                </p>
+                <button class="btn-submit" type="submit">Отправить</button>
+            </div>
+        </form>
+        <button class="btn-close"></button>
     </div>
 </div>
 <script src="js/main.js"></script>
