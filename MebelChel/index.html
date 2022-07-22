@@ -11,7 +11,6 @@
 <header class="header">
     <div class="container header__wrap">
         <img src="images/main-logo.png" alt="Логотип" class="header header__logo-img">
-        <img src="images/Rectangle%201.png" alt="" class="header header__rectangle">
         <p class="header header__text">Изготовление мебели<br> на заказ в Челябинске</p>
         <nav class="header header__nav">
             <ul class="header__list">
@@ -38,23 +37,93 @@
     <div class="container">
         <div class="primary__info">
             <div class="primary__header">
-                <h1 class="primary__title title__white">СОЗДАВАЯ СВОЕ ПРОСТРАНСТВО В ДОМЕ<br>
-                    ТОЛЬКО ВЫ РЕШАЕТЕ:</h1>
-                <h1 class="primary__title title__yellow">ПОДСТРАИВАТЬСЯ ПОД МЕБЕЛЬ<br>
-                    ИЛИ ВЫБИРАТЬ МЕБЕЛЬ ПОД СЕБЯ</h1>
+                <p class="primary__title">Создавая свое пространство в доме<br>
+                    только вы решаете:<br>
+                    <span class="primary__title title__bottom">
+                        подстраиваться под мебель<br>
+                        или выбирать мебель под себя
+                    </span>
+                </p>
             </div>
             <div class="primary__bottom bottom__wrapper">
                 <button class="btn-primary btn__order">
-                    ВЫЗВАТЬ ЗАМЕРЩИКА
-                    <img src="images/shake-hand.png" alt="" class="btn__logo">
+                    вызвать замерщика
                 </button>
-                <p class="primary__text">ЗАКАЖИТЕ ВЫЕЗД ЗАМЕРЩИКА НА ДОМ<br>
-                    ЭТО БЕСПЛАТНО</p></div>
+                <p class="primary__text">Закажите выезд замерщика на дом<br>
+                    это бесплатно</p></div>
         </div>
     </div>
 </section>
 
+<section class="catalog">
+    <div class="container catalog__wrapper">
+        <div class="catalog__header">
+            <p class="catalog__title">Каталог</p>
+            <ul class="catalog__list">
+                <li class="catalog__item">Шкаф-купе</li>
+                <li class="catalog__item">Офисная</li>
+                <li class="catalog__item">Кухни</li>
+                <li class="catalog__item">Детская</li>
+            </ul>
+        </div>
+        <div class="catalog__content">
+            <ul class="content__list">
+                <li class="content__item">
+                    <img src="images/1%201.png" alt="" class="item__image">
+                    <div class="content__item item__bottom">
+                        <p class="content__item item__text">Детская<br>
+                            <span class="item__price">от 15000</span>
+                        </p>
+                        <button class="item__btn">Заказать</button>
+                    </div>
+                </li>
+                <li class="content__item">
+                    <img src="images/2%201.png" alt="" class="item__image">
+                    <div class="content__item item__bottom">
+                        <p class="content__item item__text">Шкаф<br>
+                            <span class="item__price">от 39000</span>
+                        </p>
+                        <button class="item__btn">Заказать</button>
+                    </div>
+                </li>
+                <li class="content__item">
+                    <img src="images/3%201.png" alt="" class="item__image">
+                    <div class="content__item item__bottom">
+                        <p class="content__item item__text">Кухня<br>
+                            <span class="item__price">от 78000</span>
+                        </p>
+                        <button class="item__btn">Заказать</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
+<section class="form">
+    <div class="form__wrap">
+        <form class="order__form">
+            <p class="form__title">Вызвать замерщика на дом</p>
+            <ul class="form__list">
+                <li class="form__item name__item">
+                    <label for="line1" class="input__line name__line">Имя</label>
+                    <input type="text" required class="name__value" id="line1">
+                </li>
+                <li class="form__item phone__item">
+                    <label for="line2" class="input__line phone__line">Телефон</label>
+                    <input type="tel" pattern="\+?[0-9\s\-\(\)]+" required class="phone__value" id="line2">
+                </li>
+            </ul>
+            <div class="send">
+                <p class="send__text">*Нажимая кнопку, я даю свое<br> согласие на обработку<br>
+                    персональных
+                    данных
+                </p>
+                <button class="btn-submit" type="submit">Отправить</button>
+            </div>
+        </form>
+    </div>
+</section>
 
 </body>
 </html>
