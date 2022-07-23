@@ -106,12 +106,14 @@
             <p class="form__title">Вызвать замерщика на дом</p>
             <ul class="form__list">
                 <li class="form__item name__item">
-                    <label for="line1" class="input__line name__line">Имя</label>
-                    <input type="text" required class="name__value" id="line1">
+                    <label for="line1" class="input__title name__title">Имя</label>
+                    <input type="text" required class="input__line name__line" id="line1">
                 </li>
                 <li class="form__item phone__item">
-                    <label for="line2" class="input__line phone__line">Телефон</label>
-                    <input type="tel" pattern="\+?[0-9\s\-\(\)]+" required class="phone__value" id="line2">
+                    <label for="line2" class="input__title phone__title">Телефон</label>
+                    <input type="tel" pattern="^((\+7|7|8)+([0-9]){10})$" required class="input__line phone__line"
+                           id="line2">
+                    <!--                    placeholder="+7__________">-->
                 </li>
             </ul>
             <div class="send">
@@ -125,5 +127,73 @@
     </div>
 </section>
 
+<section class="reviews">
+    <div class="container reviews__wrap">
+        <div class="reviews__header">
+            <p class="reviews__title">Отзывы</p>
+            <div class="strollers">
+                <button class="btn-scroll btn__backward"></button>
+                <button class="btn-scroll btn__forward"></button>
+            </div>
+        </div>
+        <div class="reviews__content">
+            <ul class="reviews__list">
+                <li class="reviews__item">
+                    <div class="comment__header">
+                        <p class="comment__name first__name">Федоров<br> Никита</p>
+                        <a href="#" class="link__logo"><img src="images/vk.png" alt=""></a>
+                    </div>
+                    <div class="comment__wrapper text">
+                        <p class="comment__text">Заказывал шкаф-купе в этой компании. Очень доволен. Ребята посоветовали
+                            хороший дизайн и помогли подобрать материалы. Изготовили оперативно.</p>
+                    </div>
+                </li>
+                <li class="reviews__item">
+                    <div class="comment__header">
+                        <p class="comment__name second__name">Рязанов<br> Иван</p>
+                        <a href="#" class="link__logo"><img src="images/vk.png" alt=""></a>
+                    </div>
+                    <div class="comment__wrapper text">
+                        <p class="comment__text">Благодарю сотрудников за мою новую кухню. Дизайнер-консультант помогла
+                            с выбором материалов, цветов и самой фурнитуры. Установщик быстро
+                            и качественно установил кухню, дал подробную консультацию по эксплуатации. </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer__wrap">
+        <div class="company__part">
+            <p class="company__nane">MebelChel © 2014-2020</p>
+            <p class="policy">Политика конфиденциальности<br>
+                Копирование материалов запрещено</p>
+        </div>
+        <div class="menu__part">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Каталог</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Заявка</a>
+                </li>
+                <li class="menu__item">
+                    <a href="#" class="menu__link">Отзывы</a>
+                </li>
+            </ul>
+        </div>
+        <div class="logo__part">
+            <a href="#" class="footer__logo"><img src="images/vk.png" alt=""></a>
+            <a href="#" class="footer__logo"><img src="images/inst%201.png" alt=""></a>
+        </div>
+        <div class="contacts__part">
+            <p class="address">8 (999) 444-33-22<br>
+                г. Челябинск, ул. Ленина, д.66</p>
+            <p class="email__link">mebelchel@yandex.ru</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
