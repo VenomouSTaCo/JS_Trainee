@@ -534,6 +534,47 @@ section {
     margin-right: 20px;
 }
 
+
+.button__arrow{
+    padding: 0;
+    margin: 0;
+    border: none;
+    background-color: #FFFFFF;
+}
+
+/*.arrow{*/
+/*    display: inline-block;*/
+/*    border: solid #c9c3c3;*/
+/*    border-width: 0 6px 6px 0;*/
+/*    padding: 9px;*/
+/*    border-radius: 1px;*/
+/*}*/
+/*.arrow__backward{*/
+/*    transform: rotate(135deg);*/
+/*}*/
+
+/*.arrow__forward{*/
+/*    transform: rotate(-45deg);*/
+/*}*/
+
+.arrow__backward{
+    content: url("../images/arrow-left 1.png");
+    margin-right: 10px;
+}
+
+.arrow__forward{
+    content: url("../images/arrow 1.png");
+    margin-right: 20px;
+}
+
+.arrow__backward:hover{
+    content: url("../images/arrow-left-active 1.png");
+}
+
+.arrow__forward:hover{
+    content: url("../images/arrow-right-active 3.png");
+}
+
 .reviews__list {
     display: flex;
     margin: 0;
@@ -577,6 +618,7 @@ section {
     height: 50px;
 }
 
+
 .first__name::before {
     content: url("../images/about_pic.png");
     margin-right: 20px;
@@ -596,9 +638,117 @@ section {
     margin: 26px 0 0;
 }
 
-.footer::before {
+.reviews {
     background-image: url("../images/map 1.png");
-    background-size: cover;
     background-repeat: no-repeat;
-    height: 563px;
+    background-position: 100% 367px;
+    margin-bottom: 0;
+    padding-bottom: 445px;
+    background-size: 100% auto;
+}
+
+/*.map{*/
+/*    margin-top: -203px;*/
+/*}*/
+
+.footer {
+    width: 1200px;
+    height: max-content;
+    margin: 80px auto;
+}
+
+.footer__wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+.company__part {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.company__item {
+    margin: 0;
+}
+
+.company__name {
+    font-family: 'ubuntumedium', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    margin-bottom: 53px;
+}
+
+.policy {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.colored__name {
+    color: #FFA200;
+}
+
+.menu__list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu__item{
+    margin-bottom: 20px;
+    font-family: 'ubunturegular', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.menu__link{
+    text-decoration: none;
+    color: #000000;
+}
+
+.menu__link:visited{
+    text-decoration: none;
+}
+
+.logo__part {
+    display: flex;
+    flex-direction: column;
+}
+
+.vk__logo:hover{
+    content: url("../images/vk-active 1.png");
+}
+
+.inst__logo:hover{
+    content: url("../images/inst-active 1.png");
+}
+
+.first__logo {
+    margin-bottom: 40px;
+}
+
+
+.contacts__part {
+    font-family: 'ubunturegular', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.address {
+    margin: 0 0 30px;
+}
+
+.email__link {
+    margin: 0;
+    font-family: 'ubuntumedium', serif;
+    font-weight: 500;
 }

@@ -131,9 +131,9 @@
     <div class="container reviews__wrap">
         <div class="reviews__header">
             <p class="reviews__title">Отзывы</p>
-            <div class="strollers">
-                <button class="btn-scroll btn__backward"></button>
-                <button class="btn-scroll btn__forward"></button>
+            <div class="arrows">
+                <button class="button__arrow"><span class="arrow arrow__backward"></span></button>
+                <button class="button__arrow"><span class="arrow arrow__forward"></span></button>
             </div>
         </div>
         <div class="reviews__content">
@@ -141,7 +141,7 @@
                 <li class="reviews__item">
                     <div class="comment__header">
                         <p class="comment__name first__name">Федоров<br> Никита</p>
-                        <a href="#" class="link__logo"><img src="images/vk.png" alt=""></a>
+                        <a href="#" class="link__logo"><img class="vk__logo" src="images/vk.png" alt=""></a>
                     </div>
                     <div class="comment__wrapper text">
                         <p class="comment__text">Заказывал шкаф-купе в этой компании. Очень доволен. Ребята посоветовали
@@ -151,7 +151,7 @@
                 <li class="reviews__item">
                     <div class="comment__header">
                         <p class="comment__name second__name">Рязанов<br> Иван</p>
-                        <a href="#" class="link__logo"><img src="images/vk.png" alt=""></a>
+                        <a href="#" class="link__logo"><img class="vk__logo" src="images/vk.png" alt=""></a>
                     </div>
                     <div class="comment__wrapper text">
                         <p class="comment__text">Благодарю сотрудников за мою новую кухню. Дизайнер-консультант помогла
@@ -164,11 +164,19 @@
     </div>
 </section>
 
+<!--<section class="map">-->
+<!--    <div class="container map__container">-->
+<!--        <script type="text/javascript" charset="utf-8" async-->
+<!--                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ae9f25db47325487885639046e8a7b97af350beec83f9b1fa054aa4598ba0a578&amp;width=100%25&amp;height=563&amp;lang=ru_RU&amp;scroll=true">-->
+<!--        </script>-->
+<!--    </div>-->
+<!--</section>-->
+
 <footer class="footer">
     <div class="footer__wrap">
         <div class="company__part">
-            <p class="company__nane">MebelChel © 2014-2020</p>
-            <p class="policy">Политика конфиденциальности<br>
+            <p class="company__item company__name"><span class="colored__name">MebelChel</span> © 2014-2020</p>
+            <p class="company__item policy">Политика конфиденциальности<br>
                 Копирование материалов запрещено</p>
         </div>
         <div class="menu__part">
@@ -185,8 +193,8 @@
             </ul>
         </div>
         <div class="logo__part">
-            <a href="#" class="footer__logo"><img src="images/vk.png" alt=""></a>
-            <a href="#" class="footer__logo"><img src="images/inst%201.png" alt=""></a>
+            <a href="#" class="footer__logo first__logo"><img  class="vk__logo" src="images/vk.png" alt=""></a>
+            <a href="#" class="footer__logo"><img class="inst__logo" src="images/inst%201.png" alt=""></a>
         </div>
         <div class="contacts__part">
             <p class="address">8 (999) 444-33-22<br>
