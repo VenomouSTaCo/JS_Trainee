@@ -38,6 +38,7 @@ body {
     left: 0;
     width: 100%;
     margin: 0 auto;
+    display: flex;
 }
 
 .header__wrap {
@@ -65,9 +66,6 @@ img {
     margin: 0 20px 0 0;
 }
 
-.header__logo-img::after {
-    content: url("../images/Rectangle 1.png");
-}
 
 .header__rectangle {
     position: static;
@@ -751,4 +749,70 @@ section {
     margin: 0;
     font-family: 'ubuntumedium', serif;
     font-weight: 500;
+}
+
+@media (max-width: 767px) {
+    .header{
+        width: 100%;
+    }
+    .header__wrap{
+        display: flex;
+        width: 100%;
+    }
+
+    .header__logo-img{
+        width: 141px;
+        margin-right: 10px;
+    }
+
+    .header__contacts{
+        display: none;
+        margin: 0   ;
+    }
+
+    .header__text{
+        font-size: 12px;
+        line-height: 14px;
+    }
+
+    .header__item{
+        margin-right: 47px
+
+    }
+
+    .header__link{
+        font-family: ubunturegular, serif;
+        font-size: 14px;
+        line-height: 16px;
+        padding-right: 0;
+    }
+
+    .primary{
+        padding-left: 20px;
+        padding-right: 0;
+    }
+
+    .primary__info{
+        padding: 80px 73px 110px 0;
+    }
+
+    .primary__title{
+        font-size: 32px;
+        line-height: 37px;
+    }
+
+    .primary__header{
+        margin: 0 0 200px;
+    }
+
+    .btn__order{
+        margin-right: 20px;
+    }
+
+    .primary__text{
+        font-size: 20px;
+        line-height: 23px;
+        font-weight: 400;
+        font-family: ubunturegular, serif;
+    }
 }
